@@ -1,0 +1,21 @@
+
+{% load static %}
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Страница продукта</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+	<link rel="stylesheet" href="{% static 'fonts/font-awesome/css/font-awesome.css' %}">
+</head>
+<body>
+    {% for product in products %}
+    <div class="block">
+        <p>{{ product.name }}</p>
+        <p>{{ product.short_desc }}</p>
+        <p>{{ product.description }}</p>
+        <p>{{ product.price }}</p>
+        <p>{{ product.quantity }}</p>
+    </div>
+    {% endfor %}
+</body>
+</html>

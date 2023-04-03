@@ -51,11 +51,14 @@
         <condition column="id" operator="=" value="1" active="true" />
       </filter>
     </filter-actions>
-    <filter-actions connection-id="6e489318-9e4b-4ba0-aadd-1ab8e7345f70" dataset="main.mainapp_product" active-filter-id="50d27120-efc9-4c32-bace-00dfb744378f">
-      <filter id="50d27120-efc9-4c32-bace-00dfb744378f" name="1" temporary="false" custom-name="false" type="basic" join-type="AND">
-        <condition column="id" operator="=" value="1" active="true" />
-      </filter>
-    </filter-actions>
+    <filter-actions connection-id="6e489318-9e4b-4ba0-aadd-1ab8e7345f70" dataset="main.authapp_shopuser" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="6e489318-9e4b-4ba0-aadd-1ab8e7345f70" dataset="main.django_migrations" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="6e489318-9e4b-4ba0-aadd-1ab8e7345f70" dataset="main.auth_group" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="6e489318-9e4b-4ba0-aadd-1ab8e7345f70" dataset="main.sqlite_sequence" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="6e489318-9e4b-4ba0-aadd-1ab8e7345f70" dataset="main.auth_group_permissions" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="6e489318-9e4b-4ba0-aadd-1ab8e7345f70" dataset="main.authapp_shopuser_user_permissions" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="6e489318-9e4b-4ba0-aadd-1ab8e7345f70" dataset="main.mainapp_product" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="6e489318-9e4b-4ba0-aadd-1ab8e7345f70" dataset="main.basketapp_basket" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />

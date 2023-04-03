@@ -1,23 +1,10 @@
-<!DOCTYPE html>
+{% extends 'mainapp/base.html' %}
 {% load static %}
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Магазин</title>
-	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
-	<link rel="stylesheet" href="{% static 'fonts/font-awesome/css/font-awesome.css' %}">
-</head>
-<body>
-	<div class="container">
+
+	{% block menu %}
 		<div class="slider">
 			<div class="header clearfix">
-				<a href="index.html" class="logo"></a>
-				<ul class="menu">
-					<li><a href="{% url 'main' %}" class="active">домой</a></li>
-					<li><a href="{% url 'products' %}">продукты</a></li>
-					<li><a href="{% url 'contact' %}">контакты</a></li>
-				</ul>
-				<a href="#" class="search"></a>
+					{% include 'mainapp/includes/inc_menu.html' %}
 			</div>
 			<div class="text-slider">
 				<h3 class="green">тенденции</h3>
@@ -29,7 +16,9 @@
 				<a href="#"></a><a href="#"></a><a href="#"></a>
 			</div>
 		</div>
+	{% endblock %}
 
+	{% block content %}
 		<div class="featured">
 			<div class="featured-menu">
 					<a class="active" href="#">Популярные</a><a href="#">Новинки</a>
@@ -38,15 +27,21 @@
 			<div class="clearfix">
 			</div>
 			<div class="tab-content">
-				<div class="block">
-					<a href="#"><img src="{% static 'img/product-1.jpg' %}" alt="">
-						<div class="text">
-							<img src="{% static 'img/icon-hover.png' %}" alt="img">
-							<h4>Отличный стул</h4>
-							<p>Расположитесь комфортно. </p>
-						</div> 
-					</a>
-				</div>
+				{% for product in products %}
+					<div class="block">
+						<a href="{% url 'products:product' product.pk %}">
+							<img src="/media/{{ product.image }}" alt="{{ product.short_desc }}">
+							<div class="text">
+								<img src="{% static 'img/icon-hover.png' %}" alt="img">
+								<h3>Категория: {{ product.category.name }}</h3>
+								<h4>Название: {{ product.name }}</h4>
+								<p>Описание: {{ product.description }}</p>
+								<p>Цена: {{ product.price }}</p>
+								<p>На складе: {{ product.quantity }}</p>
+							</div>
+						</a>
+					</div>
+				{% endfor %}
 				<div class="block">
 					<a href="#"><img src="{% static 'img/product-2.jpg' %}" alt="">
 						<div class="text">
@@ -60,8 +55,10 @@
 		</div>
 		
 		<div class="clr"></div>
+	{% endblock %}
 
-	</div>
+
+
 
     <div class="footer">
         <div class="clearfix">
@@ -89,18 +86,5 @@
         </div>
         <p class="small">Положения &amp; Условия  /  Конфиденциальность &amp; Cookies</p>
     </div>
-	{% for product in products %}
-		<div class="block">
-			<a href="#">
-				<img src="/media/{{ product.image }}" alt="{{ product.short_desc }}">
-				<div class="text">
-					<h3>{{ product.category.name }}</h3>
-					<h4>{{ product.name }}</h4>
-					<p>{{ product.description }}</p>
-				</div>
-			</a>
-		</div>
-	{% endfor %}
 
-</body>
-</html>
+
